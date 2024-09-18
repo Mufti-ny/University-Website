@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="522" height="661" viewBox="0 0 522 661" enable-background="new 0 0 522 661" xml:space="preserve">
+<title>Shape 1 Copy</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="-225" y="-93" width="792" height="754"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" overflow="visible"/>
+	</clipPath>
+	<g id="Comp-tile-3" clip-path="url(#SVGID_2_)">
+		<g id="NEW" transform="translate(0.000000, -241.000000)">
+			<g id="_x32__1_" transform="translate(-272.000000, 0.000000)">
+				<g id="Banner-Green" transform="translate(253.000000, 241.000000)">
+					<g id="Banner-Bottom-left-Copy" transform="translate(203.000000, 0.000000)">
+						<g id="Words" transform="translate(2.000000, 0.000000)">
+							<g id="_x32_" transform="translate(0.000000, 0.730070)">
+								<g id="Shape-1-Copy" transform="translate(-754.000000, -93.730070)">
+									<polygon id="Rectangle-Copy-6" fill="#063906" fill-opacity="0.7" points="343,0 1135,0 770.862,755 343,755          "/>
+									<polygon id="Rectangle" fill="#A7C349" fill-opacity="0.29" points="250.324,52.432 810.484,301.857 561.085,862.076            0.924,612.65          "/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
