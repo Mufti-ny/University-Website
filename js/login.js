@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const usernameInput = document.querySelector('input[type="text"]');
     const passwordInput = document.querySelector('input[type="password"]');
     const signInBtn = document.querySelector('a');
+    const errorSpace = document.getElementById('error');
 
     // console.log("value: ", usernameInput.value)
     console.log(signInBtn.innerText)
@@ -16,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(username,password)
 
+       if (!username || !password) {
+            errorSpace.innerText = "Please Enter all the Fields";
+       } 
+       if (username && password){
+        errorSpace.innerText = "";
         fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
@@ -35,15 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log("Login successful:", data.message);
                 window.location.href = "../index.html"; // Uncomment to redirect after successful login
             } else {
-                alert('Login failed');
+                errorSpace.innerText = "Login failed";
             }
         })
         .catch(error => {
             console.error('Login error:', error);
-            alert(error.message); // Show the exact error message
+            
+            errorSpace.innerText = error.message;
+
+
+            
+
         });
         
-
+    }
 
     })
 })

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmPasswordInput = document.getElementById('confirmPassword');
     const dropdownInput = document.getElementById('mydropdown');
     const signUpBtn = document.querySelector('a');
+    const errorSpace = document.getElementById('error');
 
 
     // console.log("value: ", usernameInput.value)
@@ -21,35 +22,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const confirmPassword = confirmPasswordInput.value;
         const dropdown = dropdownInput.value;
 
+        if(password !== confirmPassword) {
+            errorSpace.innerText = "Confirm password is not same as Password!!";
+        } else if(!username || !email || !password || !confirmPassword || !dropdown) {
+            errorSpace.innerText = "Fill out all the fields";
+        }
         console.log(username, email, password, confirmPassword, dropdown)
 
-        // fetch('http://localhost:3000/login', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({ username, password })
-        // }).then(response => {
-        //     if (!response.ok) {
-        //         return response.json().then(errorData => { // Capture the error message from backend
-        //             throw new Error(errorData.error || 'Login failed');
-        //         });
-        //     }
-        //     return response.json();
-        // })
-        // .then(data => {
-        //     if (data.success) {
-        //         console.log("Login successful:", data.message);
-        //         // window.location.href = "../index.html"; // Uncomment to redirect after successful login
-        //     } else {
-        //         alert('Login failed');
-        //     }
-        // })
-        // .catch(error => {
-        //     console.error('Login error:', error);
-        //     alert(error.message); // Show the exact error message
-        // });
-        
+        if(password === confirmPassword && email && password && confirmPassword && dropdown) {
+            errorSpace.innerText = "";
+        fetch('http://localhost:3000/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, email, password, confirmPassword, dropdown })
+        }).then(response => {
+            if (!response.ok) {
+                return response.json().then(errorData => { // Capture the error message from backend
+                    throw new Error(errorData.error || 'SignUp failed');
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                console.log("SignUp successful:", data.message);
+                window.location.href = "../index.html"; // Uncomment to redirect after successful login
+            } else {
+                alert('SignUp failed');
+            errorSpace.innerText ="Signup Failed";
+
+            }
+        })
+        .catch(error => {
+            console.error('SignUp error:', error.message);
+            // alert(error.message); // Show the exact error message
+            errorSpace.innerText = error.message;
+        });
+    }
 
 
     })

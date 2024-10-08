@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="js/send_email.js" > </script>
+</head>
+<body class="w-screen h-screen">
+<div class="flex justify-center items-center w-full h-full bg-cover bg-center bg-[url('Images/entrance2.jpg')]">
+
+<div class="w-6/12 bg-white mx-auto flex justify-center flex-col iteams-center"> 
+<img class="px-32 py-6" src="Images/old_westbury_logo.jpg" alt=""> 
+<div class="w-full h-8 bg-gradient-to-r bg-gradient-to-r from-[rgb(201,222,150)] via-[rgb(138,182,107)] to-[rgb(57,130,53)]"></div>
+<div class="px-10 py-4"> 
+    <p class="text-black text-2xl flex justify-center iteams-center"> Forgot Password? </p>
+    <p class="text-red-600 font-bold text-xl" id="error"></p> 
+    <p class="text-green-600 font-bold text-xl"id="success"> </p> 
+
+</div>
+
+<div class=" gap-4 flex items-center flex-col"> 
+<input class="rounded-md border border-gray w-48 py-2 pl-2" type="email" placeholder="Email">
+
+<a href="#" class="inline-block bg-blue-900 text-white font-bold py-2 px-8 rounded-full shadow-lg hover:bg-gray-900"> Send Email </a>
+</div>
+
+<div class="py-6 flex justify center items-center flex-col underline text-blue">
+    <a href="http://127.0.0.1:5500/forgotpassword.html"> The Email has been sent. You can Reset the password now!! </a></div>
+
+
+</div>
+</div>
+</body>
+</html>
